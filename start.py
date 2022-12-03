@@ -1,4 +1,4 @@
-import codelist, fileHandler
+import codelist, fileHandler, game
 from datetime import datetime
 
 
@@ -13,14 +13,16 @@ from datetime import datetime
 # expected output:
 #   function call to game mode with initialized values
 
-def newGame(mode, n, arr):
+def newGame(mode, n, arrAttempts):
+    # resume game using save file
     if mode == 0:
-        pass        # to game.py
+        game.playGame(n, arrAttempts)        # to game.py
+
+    # initialize new game
     elif mode == 1:
-        randomGame(n, codelist.code_random)
+        randomGame()
     elif mode == 2:
-        today = datetime.now().strftime('%A')       # returns weekday
-        prepickGame(n, today)
+        prepickGame()
 
 # pickMode
 # expected input:
@@ -46,10 +48,11 @@ def resume():
     pass
 
 
-def randomGame(n, arr):
-    # pass to game
-    pass
+# TODO - Change "TRYZ" "TRYX" to random key from list
 
-def prepickGame(n, day):
-    # pass to game
-    pass
+def randomGame():
+    game.playGame(0, [],"TRYZ")
+
+def prepickGame():
+    today = datetime.now().strftime('%A')       # returns weekday
+    game.playGame(0, [],"TRYX")
