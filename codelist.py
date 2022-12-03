@@ -91,7 +91,14 @@ dict_W = {"WIKA": ["Wika, Kultura at Lipunan", "Pagsusuri sa ugnayan ng wika, ku
 
 dict_A_Z = [dict_A, dict_C, dict_D, dict_E, dict_F, dict_H_L, dict_M, dict_N_R, dict_P, dict_S, dict_T, dict_V, dict_W] #comprehensive dictionary
 
-#SAMPLE CODE SELECTION
+#List of code per day
+Monday = [dict_A, dict_H_L, dict_T,]
+Tueday = [dict_C, dict_M,]
+Wednesday = [dict_D, dict_N_R, dict_V,]
+Thursday = [dict_E, dict_P,]
+Friday = [dict_F, dict_S, dict_W]
+
+#SAMPLE CODE SELECTION 
 item = random.choice(list(dict_A_Z))                #items in super dictionary dict_A_Z
 pick = item                                         #store the selected item using pick
 code_random = random.choice(list(pick.keys()))      #randomize through the selected sub dictionary
