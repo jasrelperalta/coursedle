@@ -1,5 +1,6 @@
-import codelist, fileHandler, game
-from datetime import datetime
+import fileHandler, game, random, calendar
+from codelist import dict_A_Z, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+from datetime import date
 
 
 # newGame
@@ -48,11 +49,21 @@ def resume():
     pass
 
 
-# TODO - Change "TRYZ" "TRYX" to random key from list
-
 def randomGame():
-    game.playGame(0, [],"TRYZ")
+# from randomization.py (GAGI DI KO PALA NAKITA SORRY MY BAD)
+    # pick random course code from main list of all course codes 
+    letter = random.choice(list(dict_A_Z))                                                       
+    word = random.choice(list(letter.keys()))
+
+    #sample outputs     
+    # print("Sample chosen word:", word)
+    # print("Sample info: ", letter[word])
+
+    game.playGame(0, [], word)
 
 def prepickGame():
-    today = datetime.now().strftime('%A')       # returns weekday
-    game.playGame(0, [],"TRYX")
+    today = date.today()
+    day = str(calendar.day_name[today.weekday()])
+    
+    word = random.choice(list(globals()[day]))
+    game.playGame(0, [], word)
