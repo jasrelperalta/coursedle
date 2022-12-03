@@ -59,11 +59,11 @@ def randomGame():
     # print("Sample chosen word:", word)
     # print("Sample info: ", letter[word])
 
-    game.playGame(0, [], word)
+    game.playGame(0, [], [], word)
 
 def prepickGame():
     today = date.today()
     day = str(calendar.day_name[today.weekday()])
     
     word = random.choice(list(globals()[day]))
-    game.playGame(0, [], word)
+    game.playGame(0, [], [], word)

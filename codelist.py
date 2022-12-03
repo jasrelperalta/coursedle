@@ -93,7 +93,7 @@ dict_A_Z = [dict_A, dict_C, dict_D, dict_E, dict_F, dict_H_L, dict_M, dict_N_R, 
 
 #List of code per day
 Monday = [dict_A]
-Tueday = [dict_C, dict_M]
+Tuesday = [dict_C, dict_M]
 Wednesday = [dict_D, dict_N_R]
 Thursday = [dict_E, dict_P]
 Friday = [dict_F, dict_S]
