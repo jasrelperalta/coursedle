@@ -5,22 +5,22 @@ def loadFile():
 
     if os.path.exists(path):
         f = open(path, 'r')
-        mode = f.readline().strip()
         numAttempts = f.readline().strip()
         attempts = f.readline().strip()
         letterAttempts = f.readline().strip()
-        return mode, numAttempts, attempts, letterAttempts
+        guessWord = f.readline().strip()
+        return numAttempts, attempts, letterAttempts, guessWord
 
-def saveFile(mode, n, att, lett):
+def saveFile(n, att, lett, word):
     path = 'savefile.txt'
 
     f = open(path, 'w')
 
-    tempStr = str(mode) + '\n' + str(n) + '\n' + str(att) + '\n' + str(lett)
+    tempStr = str(n) + '\n' + str(att) + '\n' + str(lett) + '\n' + str(word)
     f.write(tempStr)
     f.close()
 
-# saveFile(1, 2, ['CMSC', 'AMAT'], ['C', 'M', 'S', 'A', 'T'])
+saveFile(2, ['CMSC', 'AMAT'], ['C', 'M', 'S', 'A', 'T'], "THEA")
 
-# for i in loadFile():
-#     print(i)
+for i in loadFile():
+    print(i)

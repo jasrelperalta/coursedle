@@ -19,3 +19,5 @@ def playGame(n, arrAttempts, letterAttempts, guessWord):
     # if tama, show win screen, then main menu
     # elif mali but n < 4, call another instance ng playgame with updated arrays
     # elif mali n == 4 na, show lose screen, then main menu
+    print(guessWord)
+    end = input("End")
