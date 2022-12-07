@@ -40,12 +40,14 @@ def prepickGame(n, arr):
     
     today = date.today()
     day = str(calendar.day_name[today.weekday()])
+    # day = "Monday"
     
-    word = random.choice(list(globals()[day]))
+    dayList = random.choice(list(globals()[day]))
+    word = random.choice(list(dayList))
     
     #sample outputs
     print("Sample chosen word:", word)
-    print("Sample info: ", globals() [day] [word])
+    print("Sample info: ", dayList[word])
     
     end = int(input("End game mode: "))
     

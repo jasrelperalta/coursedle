@@ -1,3 +1,4 @@
-0
-3
-CMSC,AMAT,STAT
+2
+['CMSC', 'AMAT']
+['C', 'M', 'S', 'A', 'T']
+THEA

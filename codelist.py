@@ -33,10 +33,10 @@ dict_C = {"CERP" : ["Community and Environmental Resource Planning", "Under the 
 dict_D = {"DEVC": ["Development Communication", "The College of Development Communication (CDC) is the pioneer in the practice and study of development communication in Asia."],
           "DVST": ["Development Studies", "Tackles development issues such as food security, natural resource management, population, gender and development, and agrarian and rural development—areas that will support the distinctive excellence of UPLB in agriculture, forestry and the environment."]}
 
-dict_E = {"ECON": ["Economics", "C"],
-          "EDUC": ["Educational Foundations", "C"],
-          "ENSC": ["Engineering Science", "C"],
-          "ENTR": ["Entrepreneurship", "C"]}
+dict_E = {"ECON": ["Economics", "This program plays a prominent role in economics education, research, and public service in the Philippines; and  contribute to the formulation of local and national economic development plans through problem-oriented research and rigorous academic training that produce influential decision-makers in government, business, and civil society "],
+          "EDUC": ["Educational Foundations", "Examines concepts and theories from educational, social, and developmental psychology and sociology"],
+          "ENSC": ["Engineering Science", "The application of scientific and practical knowledge to design, analyze, and build structures, machines, and programs for practical purposes."],
+          "ENTR": ["Entrepreneurship", "Viewed as change, generally entailing risk beyond what is normally encountered in starting a business, which may include other values than simply economic ones."]}
 
 dict_F = {"FPPS": ["Forest Products and Paper Science", "The program aims to produce licensed foresters who are equipped with the foresters who are equipped with the knowledge and skills in making profitable but sustainable use of the basic properties of forest products, of technologies for maximizing their use and of their possible impacts to the environment."],
           "FRCH": ["French", "One of the foreign language programs offered by the Language Division of the Department of Humanities. It includes the fundamental elements of the French language within a cultural context with emphasis on pronunciation, vocabulary building, and conversation."]}
@@ -104,8 +104,7 @@ Sunday = [dict_H_L, dict_W]
 item = random.choice(list(dict_A_Z))                #items in super dictionary dict_A_Z
 pick = item                                         #store the selected item using pick
 code_random = random.choice(list(pick.keys()))      #randomize through the selected sub dictionary
-print(code_random)
-
+# print(code_random)
 
 #sample/test printing the descriptions
 '''

@@ -53,14 +53,16 @@ def mainMenu():
     
     option = int(input('\nReady? (Input number of option): '))
     
-    if option == 1:
-        #start 
-        print('start')
-    elif option == 2:
-        #resume
-        print('resume')
-    elif option == 3:
-        #exit
-        print('exit')
-    
-mainMenu()
+    # if option == 1:
+    #     #start 
+    #     print('start')
+    # elif option == 2:
+    #     #resume
+    #     print('resume')
+    # elif option == 3:
+    #     #exit
+    #     print('exit')
+
+    return option
+
+# mainMenu()
