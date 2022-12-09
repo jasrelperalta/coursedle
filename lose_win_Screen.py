@@ -15,7 +15,9 @@ def winScreen(guessWord):
                 print(desc[1])
                 
     print("-" * 100)
-    menu.mainMenu()          
+    print()
+    key_press()
+            
                 
 def loseScreen(guessWord):
     print(colored("YOU LOSE. BETTER LUCK NEXT TIME!", "red"))
@@ -28,8 +30,19 @@ def loseScreen(guessWord):
                 print(desc[1])
                 
     print("-" * 100) 
-    menu.mainMenu() 
+    key_press()
  
+def key_press():
+    num_press = int(input(colored("Press [1] to go back to Main Menu or [0] to exit game: ", "yellow")))
+    if num_press == 1:
+        menu.mainMenu()  
+    elif num_press == 0:
+        print(colored("GOODBYE!", "green"))
+        print()
+    else:
+        print("Invalid Key. Try Again")
+        key_press()
+        
 #sample printing   
 loseScreen("AMAT")
 
