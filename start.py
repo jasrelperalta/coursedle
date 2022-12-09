@@ -57,7 +57,7 @@ def randomGame():
     # print("Sample chosen word:", word)
     # print("Sample info: ", letter[word])
 
-    game.playGame(0, [], [], word)
+    game.playGame(0, [], word)
 
 def prepickGame():
     today = date.today()
@@ -67,4 +67,4 @@ def prepickGame():
     dayList = random.choice(list(globals()[day]))
     word = random.choice(list(dayList))
 
-    game.playGame(0, [], [], word)
+    game.playGame(0, [], word)
