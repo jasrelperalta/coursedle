@@ -1,3 +1,4 @@
+import lose_win_Screen as lws
 import mechanics
 from colorama import Back, init
 
@@ -22,12 +23,12 @@ def playGame(n, arrAttempts, guessWord):
         # update array of attempts and n
         end = input("\n") # need 4 letters input
         if end == guessWord:
-            winScreen()
+            lws.winScreen(guessWord)
         check(end, guessWord)
         n += 1
-    loseScreen()
+    lws.loseScreen(guessWord)
 
-
+'''#function moved to another file
 def winScreen():
     print("u win lol")
     end = input("Press ENTER to continue")
@@ -35,7 +36,7 @@ def winScreen():
 def loseScreen():
     print("lose")
     end = input("Press ENTER to continue")
-
+'''
     
         
 def check(code_guess,code_random):
