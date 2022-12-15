@@ -3,7 +3,6 @@
 import random 
 import calendar
 from datetime import date
-from courses import CODES, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
 from codelist import dict_A_Z
 from termcolor import colored
 from colorama import Fore, Back, init
@@ -28,31 +27,19 @@ def start(mode, n, arr):
         prepickGame(n, arr)
         
 def check(n,arr,word,code_guess,code_random):
-    while n<5:
-        if code_guess == code_random:
-            for i in range(4):
-                print(Back.GREEN + ' ' + code_guess[i] + ' ' , end ='')
-            break
-        else:
-            for i in range(4):
+    for i in range(4):
             
-                # print(code_guess[i])
-                count = code_random.count(code_guess[i])
-                # print(count)
+            count = code_random.count(code_guess[i])
             
-                if count > 0:
-                    #print(code_guess[i], 'exist')
-                    
-                    if code_guess[i] == code_random[i]:
-                        print(Back.GREEN + ' ' + code_guess[i] + ' ' , end ='')
-                    else:
-                        print(Back.YELLOW + ' ' + code_guess[i] + ' ' , end ='')
-                
+            if count > 0:
+                #check if letter is in code word & right location              
+                if code_guess[i] == code_random[i]:
+                    print(Back.GREEN + ' ' + code_guess[i] + ' ' , end ='')
                 else:
-                    #print(code_guess[i], 'does not exist')
-                    print(Back.RED + ' ' + code_guess[i] + ' ' , end='')
-       
-        break       
+                    print(Back.YELLOW + ' ' + code_guess[i] + ' ' , end ='')
+            else:
+                #letter not in code word
+                print(Back.RED + ' ' + code_guess[i] + ' ' , end='')
         
         
 def randomGame(n, arr):
@@ -68,17 +55,29 @@ def randomGame(n, arr):
     
     while n<4:
         code_random = list(word)
-        print(code_random)
-        guess = input("\nEnter code: ")
+        guess = str(input("\nEnter code: ")).upper()
         code_guess = list(guess)
-        print(code_guess)
         
         print(code_random, code_guess)
+        letters = len(guess)
         
         n = n+1
         print(n)
         
-        check(n,arr,code_guess,code_random)
+        if code_guess == code_random:
+            for i in range(4):
+                print(Back.GREEN + ' ' + code_guess[i] + ' ' , end ='')
+            print("\n call WIN")
+            break
+        else:
+            while letters == 4:
+                check(n,arr,word,code_guess,code_random)
+                break
+            else:
+                print("Please enter 4 letter courses only.")
+        
+    else:
+        print("\n call LOSE")
             
     
     end = int(input("\nEnd game mode: "))
@@ -97,19 +96,33 @@ def prepickGame(n, arr):
     
     while n<4:
         code_random = list(word)
-        guess = input("\nEnter code: ")
+        guess = str(input("\nEnter code: ")).upper()
         code_guess = list(guess)
         
         print(code_random, code_guess)
+        letters = len(guess)
         
         n = n+1
         print(n)
         
-        check(n,arr,word,code_guess,code_random)
-    
+        if code_guess == code_random:
+            for i in range(4):
+                print(Back.GREEN + ' ' + code_guess[i] + ' ' , end ='')
+            print("\n call WIN")
+            break
+        else:
+            while letters == 4:
+                check(n,arr,word,code_guess,code_random)
+                break
+            else:
+                print("Please enter 4 letter courses only.")
+        
+    else:
+        print("\n call LOSE")
     
     
     end = int(input("\nEnd game mode: "))
+    
     
     
 main()
