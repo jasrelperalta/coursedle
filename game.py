@@ -1,5 +1,6 @@
 import lose_win_Screen as lws
 import mechanics
+import fileHandler
 from colorama import Back, init
 
 
@@ -9,7 +10,7 @@ init(autoreset=True)
 # arrAttempts = previous words na ininput
 # letterAttempts = list of letters na ginamit before
 # guessWord = word na huhulaan
-def playGame(n, arrAttempts, guessWord):
+def playGame(n, guessWord):
     # coursedle banner with colors
     mechanics.coursedle_mechanics()
 
@@ -22,6 +23,9 @@ def playGame(n, arrAttempts, guessWord):
         # check
         # update array of attempts and n
         end = input("\n") # need 4 letters input
+        if end == 'SAVE':
+            fileHandler.saveFile(n, guessWord)
+            quit()
         if end == guessWord:
             lws.winScreen(guessWord)
         check(end, guessWord)

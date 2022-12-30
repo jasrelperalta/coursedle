@@ -44,8 +44,8 @@ def pickMode():
 # expected output:
 #   call to start
 def resume():
-    numAttempts, attempts, letterAttempts, guessWord = fileHandler.loadFile()
-    game.playGame(numAttempts,attempts, letterAttempts, guessWord)
+    numAttempts, guessWord = fileHandler.loadFile()
+    game.playGame(numAttempts, guessWord)
 
 def randomGame():
 # from randomization.py (GAGI DI KO PALA NAKITA SORRY MY BAD)
@@ -57,7 +57,7 @@ def randomGame():
     # print("Sample chosen word:", word)
     # print("Sample info: ", letter[word])
 
-    game.playGame(0, [], word)
+    game.playGame(0, word)
 
 def prepickGame():
     today = date.today()
@@ -66,5 +66,6 @@ def prepickGame():
     
     dayList = random.choice(list(globals()[day]))
     word = random.choice(list(dayList))
+    print(word)
 
-    game.playGame(0, [], word)
+    game.playGame(0, word)
