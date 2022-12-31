@@ -1,5 +1,5 @@
-import random
-from termcolor import colored
+from datetime import date
+import calendar
 
 dict_A = {"ABME" : ["Agribusiness Management and Entrepreneurship", "Agribusiness management encompasses many aspects of the economy: agricultural producers, businesses that provide supplies and services to the producers, businesses that add value to agricultural products, and those that facilitate the marketing of agricultural products to an ever-growing marketplace"],
           "ABSE" : ["Agrometeorology, Bio-structures and Environment Engineering", "Aims to: harness crop yield potential from favourable weather as well as weather extremes; improve crop and animal production by developing controlled environment technologies; and minimize environmental impact of agricultural wastes"],
@@ -100,20 +100,31 @@ Friday = [dict_F, dict_S]
 Saturday = [dict_T, dict_V]
 Sunday = [dict_H_L, dict_W]
 
-#SAMPLE CODE SELECTION 
-item = random.choice(list(dict_A_Z))                #items in super dictionary dict_A_Z
-pick = item                                         #store the selected item using pick
-code_random = random.choice(list(pick.keys()))      #randomize through the selected sub dictionary
-# print(code_random)
+def listToday():
+    mondayList = "A"
+    tuesdayList = "C and M"
+    wednesdayList = "D, N, and R"
+    thursdayList = "E and P"
+    fridayList = "F and S"
+    saturdayList = "T and V"
+    sundayList = "H, L, and W"
 
-#sample/test printing the descriptions
-'''
-for code, desc in dict_A.items():
-    print(colored(code, "blue"), end=": ")
-    print(desc[0])
-    print(desc[1])
-    print()
-'''
+    today = str(calendar.day_name[date.today().weekday()])
+    
+    if today == "Monday":
+        todayList = mondayList
+    if today == "Tuesday":
+        todayList = tuesdayList
+    if today == "Wednesday":
+        todayList = wednesdayList
+    if today == "Thursday":
+        todayList = thursdayList
+    if today == "Friday":
+        todayList = fridayList
+    if today == "Saturday":
+        todayList = saturdayList
+    if today == "Sunday":
+        todayList = sundayList
 
-
+    return todayList
 
