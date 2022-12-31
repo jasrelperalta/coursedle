@@ -4,6 +4,7 @@ from colorama import Back, init
 
 init(autoreset=True)
 
+# save game progress
 def saveFile(n, word):
     path = 'savefile.txt'
 
@@ -13,6 +14,7 @@ def saveFile(n, word):
     f.write(tempStr)
     f.close()
 
+# prints user attempt
 def printAttempt(n):
     if n == 0:
         tempStr = "\n" + str(n+1) + "st attempt:\n"
@@ -21,9 +23,8 @@ def printAttempt(n):
     elif n > 1:
         tempStr = "\n" + str(n+1) + "th attempt:\n"
     return tempStr
-    
 
-
+# called when resume or new game
 def playGame(n, guessWord):
     mechanics.coursedle_mechanics()
 
@@ -44,7 +45,7 @@ def playGame(n, guessWord):
     if n == 4:
         mechanics.loseScreen(guessWord)
     
-        
+# checking logic of attempts
 def check(code_guess,code_random):
     if code_guess == code_random:
         for i in range(4):

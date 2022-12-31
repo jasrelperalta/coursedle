@@ -2,23 +2,21 @@ from codelist import dict_A_Z, Monday, Tuesday, Wednesday, Thursday, Friday, Sat
 from datetime import date
 import mechanics, game, codelist
 import os, calendar, random
-import textwrap as tw
 
+# clears terminal
 def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')    # linux or windows
+    os.system('cls' if os.name == 'nt' else 'clear')
 
+# determine if resume, random, prepick game mode
 def newGame(mode, n, arrAttempts):
-    # resume game using save file
     if mode == 0:
         game.playGame(n, arrAttempts)
-
-    # initialize new game
     elif mode == 1:
         randomGame()
     elif mode == 2:
         prepickGame()
 
-
+# prints mechanics and today's list and picks game mode
 def pickMode():
     choice = 0
     while choice != 1 or choice != 2:
@@ -28,6 +26,7 @@ def pickMode():
             break
     return choice
 
+# loads existing saved game
 def loadFile():
     path = 'savefile.txt'
 
@@ -37,14 +36,14 @@ def loadFile():
         guessWord = f.readline().strip()
         return numAttempts, guessWord
 
-
+# called in menu if player will resume
 def resume():
     numAttempts, guessWord = loadFile()
     game.playGame(numAttempts, guessWord)
 
 
+# pick random course code from main list of all course codes 
 def randomGame():
-    # pick random course code from main list of all course codes 
     letter = random.choice(list(dict_A_Z))                                                       
     word = random.choice(list(letter.keys()))
 
@@ -54,6 +53,7 @@ def randomGame():
 
     game.playGame(0, word)
 
+# pick random course code from today's list
 def prepickGame():
     today = date.today()
     day = str(calendar.day_name[today.weekday()])
