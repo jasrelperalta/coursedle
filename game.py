@@ -28,7 +28,7 @@ def playGame(n, guessWord):
     mechanics.coursedle_mechanics()
 
     while n < 4:
-        guess = input(printAttempt(n)) # need 4 letters input
+        guess = str(input(printAttempt(n))).upper() # need 4 letters input
         if len(guess) == 4:
             if guess == 'SAVE':
                 saveFile(n, guessWord)
