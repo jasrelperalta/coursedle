@@ -12,7 +12,13 @@ def playGame(n, guessWord):
     mechanics.coursedle_mechanics()
 
     while n < 4:
-        end = input("\n") # need 4 letters input
+        if n == 0:
+            tempStr = "\n" + str(n+1) + "st attempt:\n"
+        elif n == 1:
+            tempStr = "\n" + str(n+1) + "nd attempt:\n"
+        elif n > 1:
+            tempStr = "\n" + str(n+1) + "th attempt:\n"
+        end = input(tempStr) # need 4 letters input
         if len(end) == 4:
             if end == 'SAVE':
                 fileHandler.saveFile(n, guessWord)
