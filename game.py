@@ -1,38 +1,48 @@
-import lose_win_Screen as lws
 import mechanics
-import fileHandler
 from colorama import Back, init
 
 
-init(autoreset=True)   
+init(autoreset=True)
 
-# n = number of attempts
-# guessWord = word na huhulaan
+def saveFile(n, word):
+    path = 'savefile.txt'
+
+    f = open(path, 'w')
+
+    tempStr = str(n) + '\n' + str(word)
+    f.write(tempStr)
+    f.close()
+
+def printAttempt(n):
+    if n == 0:
+        tempStr = "\n" + str(n+1) + "st attempt:\n"
+    elif n == 1:
+        tempStr = "\n" + str(n+1) + "nd attempt:\n"
+    elif n > 1:
+        tempStr = "\n" + str(n+1) + "th attempt:\n"
+    return tempStr
+    
+
+
 def playGame(n, guessWord):
     mechanics.coursedle_mechanics()
 
     while n < 4:
-        if n == 0:
-            tempStr = "\n" + str(n+1) + "st attempt:\n"
-        elif n == 1:
-            tempStr = "\n" + str(n+1) + "nd attempt:\n"
-        elif n > 1:
-            tempStr = "\n" + str(n+1) + "th attempt:\n"
-        end = input(tempStr) # need 4 letters input
-        if len(end) == 4:
-            if end == 'SAVE':
-                fileHandler.saveFile(n, guessWord)
+        guess = input(printAttempt(n)) # need 4 letters input
+        if len(guess) == 4:
+            if guess == 'SAVE':
+                saveFile(n, guessWord)
+                mechanics.saveGame()
                 quit()
-            if end == guessWord:
-                lws.winScreen(guessWord)
+            if guess == guessWord:
+                mechanics.winScreen(guessWord)
                 break
-            check(end, guessWord)
+            check(guess, guessWord)
             n += 1
         else:
             print("Invalid input!")
     if n == 4:
-        lws.loseScreen(guessWord)
-
+        mechanics.loseScreen(guessWord)
     
         
 def check(code_guess,code_random):
