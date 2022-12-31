@@ -1,11 +1,3 @@
 # Coursedle
-## Git Commands
-`git clone [link]` - to create yung local copy if first time iaaccess yung repository 
-
-`git pull` - para ma-update sa'yo yung files na nabago since your last pull
-
-`git add [file]` - to add yung files na may binago ka 
-
-`git commit -m "[describe yung changes na ginawa]"` - to describe yung changes before pushing yung files 
-
-`git push` - create changes to the repository
+---
+**COURSEDLE** is a Wordle-inspired game made by AMAT 152 students for their Final Project. It follows Wordle's basic mechanics with an added UPLB twist. Test how familiar you are to UPLB's programs by guessing the given word which will be chosen from the different 4-letter codes of courses offered by the University.
