@@ -8,7 +8,7 @@ from termcolor import colored
 
 def mainMenu():
 
-    init(autoreset=True)    
+#     init(autoreset=True)    
 
     print('─' * 50)
 

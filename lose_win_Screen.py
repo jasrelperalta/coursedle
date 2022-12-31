@@ -5,7 +5,7 @@ import menu
 
 
 def winScreen(guessWord):
-    print(colored("CONGRATULATIONS! YOU WON!", "green"))
+    print(colored("\nCONGRATULATIONS! YOU WON!", "green"))
     print("-" * 100)
     for item in codelist.dict_A_Z:
         for code, desc in item.items(): 
@@ -20,7 +20,7 @@ def winScreen(guessWord):
             
                 
 def loseScreen(guessWord):
-    print(colored("YOU LOSE. BETTER LUCK NEXT TIME!", "red"))
+    print(colored("\nYOU LOSE. BETTER LUCK NEXT TIME!", "red"))
     print("-" * 100)
     for item in codelist.dict_A_Z:
         for code, desc in item.items(): 
@@ -35,16 +35,17 @@ def loseScreen(guessWord):
 def key_press():
     num_press = int(input(colored("Press [1] to go back to Main Menu or [0] to exit game: ", "yellow")))
     if num_press == 1:
-        menu.mainMenu()  
+        # menu.mainMenu() -> caused double printing ng menu
+        pass
     elif num_press == 0:
         print(colored("GOODBYE!", "green"))
-        print()
+        quit()
     else:
         print("Invalid Key. Try Again")
         key_press()
         
 #sample printing   
-loseScreen("AMAT")
+# loseScreen("AMAT")
 
 
 #problem: the info prints twice. idk why lol (fixed na)
