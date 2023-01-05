@@ -23,15 +23,16 @@ def pickMode():
         print(mechanics.modePick(codelist.listToday()))
         choice = input("\n[1] Random\n[2] Pre-pick\n\nPick a game mode: ")
 
-        while len(choice) < 1 or not choice.isdigit():
-            print("Invalid choice!")
-            choice = input('\nReady? (Input number of option): ')
-        
+        if len(choice) < 1 or not choice.isdigit():
+            print("Invalid choice!\n")
+            continue   
+
         choice = int(choice)
         if choice == 1 or choice == 2:
+            choice = int(choice)
             break
         else:
-            continue
+            print("Invalid choice!\n")
     return choice
 
 # loads existing saved game
@@ -73,9 +74,9 @@ def prepickGame():
 
 # user pick choice
 while True:
-    # clear()
+    clear()
     choice = mechanics.mainMenu()
-    while len(choice) < 1 or not choice.isdigit():
+    while len(choice) < 1 or not choice.isdigit() or int(choice) > 3 or int(choice) == 0:
         print("Invalid choice!")
         choice = input('\nReady? (Input number of option): ')
     
