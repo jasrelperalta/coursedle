@@ -53,7 +53,7 @@ def mainMenu():
     print(' (2) RESUME')
     print(' (3) QUIT ')
     
-    option = int(input('\nReady? (Input number of option): '))
+    option = input('\nReady? (Input number of option): ')
     
     return option
 
