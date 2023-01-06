@@ -73,7 +73,7 @@ while True:
         newGame(mode, 0, [])
     elif choice == 2:
         resume()
-    elif choice == 3:
+    elif choice == 1:
         break
     else:
         print("Invalid choice!")

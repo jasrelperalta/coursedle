@@ -20,7 +20,9 @@ def printAttempt(n):
         tempStr = "\n" + str(n+1) + "st attempt:\n"
     elif n == 1:
         tempStr = "\n" + str(n+1) + "nd attempt:\n"
-    elif n > 1:
+    elif n == 2:
+        tempStr = "\n" + str(n+1) + "rd attempt:\n"
+    elif n == 3:
         tempStr = "\n" + str(n+1) + "th attempt:\n"
     return tempStr
 
